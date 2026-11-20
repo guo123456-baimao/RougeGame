@@ -22,9 +22,6 @@ public class LightningHazard : MonoBehaviour
     [SerializeField] private float areaRadius = 1.75f;
 
     [Header("Visual")]
-    [SerializeField] private int sheetColumns = 7;
-    [SerializeField] private int sheetRows = 7;
-    [SerializeField] private int frameCount = 49;
     [SerializeField] private int fps = 30;
     [SerializeField] private float pixelsPerUnit = 100f;
     [SerializeField, Min(1f)] private float visualRadiusPixels = 62f;
@@ -57,7 +54,6 @@ public class LightningHazard : MonoBehaviour
 
     private EntityManager entityManager;
     private Character playerCharacter;
-    private Texture2D lightningSheet;
     private Sprite[] frames;
     private Texture2D rangeTexture;
     private Sprite rangeSprite;
@@ -72,12 +68,11 @@ public class LightningHazard : MonoBehaviour
 
     private int TicksPerEffect => Mathf.Max(1, Mathf.RoundToInt(effectDuration / Mathf.Max(0.01f, damageInterval)));
 
-    public void Init(EntityManager entities, Character player, Texture2D sheet)
+    public void Init(EntityManager entities, Character player, Sprite[] lightningFrames)
     {
         entityManager = entities;
         playerCharacter = player;
-        lightningSheet = sheet;
-        BuildFrames();
+        frames = lightningFrames;
         BuildRangeSprite();
         BuildVisual();
     }
@@ -310,22 +305,6 @@ public class LightningHazard : MonoBehaviour
         }
     }
 
-    private void BuildFrames()
-    {
-        if (lightningSheet == null) return;
-        int cols = Mathf.Max(1, sheetColumns), rows = Mathf.Max(1, sheetRows);
-        int count = Mathf.Clamp(frameCount, 1, cols * rows);
-        float cellWidth = lightningSheet.width / (float)cols;
-        float cellHeight = lightningSheet.height / (float)rows;
-        frames = new Sprite[count];
-        for (int i = 0; i < count; i++)
-        {
-            int col = i % cols, row = i / cols;
-            Rect rect = new Rect(col * cellWidth, lightningSheet.height - (row + 1) * cellHeight, cellWidth, cellHeight);
-            frames[i] = Sprite.Create(lightningSheet, rect, new Vector2(0.5f, 0.5f), Mathf.Max(1f, pixelsPerUnit));
-        }
-    }
-
     /// <summary>
     /// 程序化生成白色圆形范围精灵（外圈亮环 + 内部淡填充）。
     /// 世界半径恰好为 1，缩放 areaRadius 后与伤害判定圆一致；不依赖外部资源。
@@ -391,9 +370,6 @@ public class LightningHazard : MonoBehaviour
     private void OnDestroy()
     {
         Stop();
-        if (frames != null)
-            for (int i = 0; i < frames.Length; i++)
-                if (frames[i] != null) Destroy(frames[i]);
         if (rangeSprite != null) Destroy(rangeSprite);
         if (rangeTexture != null) Destroy(rangeTexture);
     }

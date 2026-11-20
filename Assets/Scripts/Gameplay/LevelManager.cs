@@ -19,8 +19,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Sprite[] bloodRainGroundFrames;
     [Tooltip("相位2「血色地」的血雨切片帧，渲染在角色上方")]
     [SerializeField] private Sprite[] bloodRainRainFrames;
-    [Tooltip("相位3「虚空」的闪电精灵图，留空则不启用该机制")]
-    [SerializeField] private Texture2D lightningSheet;
+    [Tooltip("相位3「虚空」的闪电切片帧，留空则不启用该机制")]
+    [SerializeField] private Sprite[] lightningFrames;
     [Tooltip("是否打印相位切换与每段刷怪分布日志（验收用，发布时可关闭）")]
     [SerializeField] private bool enablePhaseLogs = true;
     private float levelTime = 0;
@@ -100,11 +100,11 @@ public class LevelManager : MonoBehaviour
             bloodRainHazard.Init(entityManager, playerCharacter, bloodRainGroundFrames, bloodRainRainFrames);
         }
         // 相位3「虚空」的闪电机制
-        if (lightningSheet != null)
+        if (lightningFrames != null && lightningFrames.Length > 0)
         {
             lightningHazard = GetComponent<LightningHazard>();
             if (lightningHazard == null) lightningHazard = gameObject.AddComponent<LightningHazard>();
-            lightningHazard.Init(entityManager, playerCharacter, lightningSheet);
+            lightningHazard.Init(entityManager, playerCharacter, lightningFrames);
         }
         // 技能栏 / 进度条 / 受击反馈都挂在这里，统一注入依赖
         hud = InGameHud.Ensure();
