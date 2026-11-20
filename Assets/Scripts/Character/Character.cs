@@ -62,6 +62,8 @@ public class Character : IDamageable, ISpatialHashGridClient
     public int CurrentLevel { get => currentLevel; }
     /// <summary>当前血量占上限的比例，HUD 用它决定要不要脉冲告警。</summary>
     public float HealthRatio => baseHpForEngravings > 0f ? Mathf.Clamp01(currentHealth / baseHpForEngravings) : 0f;
+    /// <summary>铭文与商店加成结算后的实际最大生命，环境伤害按它计算。</summary>
+    public float MaxHealth => baseHpForEngravings;
     public UnityEvent<float> OnDealDamage { get; } = new UnityEvent<float>();
     public UnityEvent OnDeath { get; } = new UnityEvent();
     public CharacterBlueprint Blueprint { get => characterBlueprint; }
@@ -396,6 +398,28 @@ public class Character : IDamageable, ISpatialHashGridClient
                 if (hitAnimationCoroutine != null) StopCoroutine(hitAnimationCoroutine);
                 hitAnimationCoroutine = StartCoroutine(HitAnimation());
             }
+        }
+    }
+
+    /// <summary>
+    /// 环境类真实伤害：不再经过护甲减免，用于血雨这类按最大生命百分比结算的机制。
+    /// </summary>
+    public void TakeTrueDamage(float damage)
+    {
+        if (!alive || damage <= 0f) return;
+        damage = Mathf.Min(damage, Mathf.Max(0f, currentHealth));
+        healthBar.SubtractPoints(damage);
+        currentHealth -= damage;
+        statsManager.IncreaseDamageTaken(damage);
+        InGameHud.Instance?.FlashDamage();
+        if (currentHealth <= 0f)
+        {
+            StartCoroutine(DeathAnimation());
+        }
+        else
+        {
+            if (hitAnimationCoroutine != null) StopCoroutine(hitAnimationCoroutine);
+            hitAnimationCoroutine = StartCoroutine(HitAnimation());
         }
     }
 

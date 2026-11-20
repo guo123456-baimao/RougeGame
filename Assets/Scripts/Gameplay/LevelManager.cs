@@ -15,6 +15,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private StatsManager statsManager;
     [SerializeField] private GameOverDialog gameOverDialog;
     [SerializeField] private GameTimer gameTimer;
+    [Tooltip("相位2「血色地」的血池切片帧，渲染在角色下方")]
+    [SerializeField] private Sprite[] bloodRainGroundFrames;
+    [Tooltip("相位2「血色地」的血雨切片帧，渲染在角色上方")]
+    [SerializeField] private Sprite[] bloodRainRainFrames;
+    [Tooltip("相位3「虚空」的闪电精灵图，留空则不启用该机制")]
+    [SerializeField] private Texture2D lightningSheet;
     [Tooltip("是否打印相位切换与每段刷怪分布日志（验收用，发布时可关闭）")]
     [SerializeField] private bool enablePhaseLogs = true;
     private float levelTime = 0;
@@ -29,6 +35,8 @@ public class LevelManager : MonoBehaviour
     private int miniBossesSpawned;
     private int[] phaseSpawnCounts;  // 当前相位内各怪物实际刷出数量，用于日志验收
     private PhaseTransitionFX phaseTransitionFX;  // 相位切换演出（渐黑下沉/渐亮上升）
+    private BloodRainHazard bloodRainHazard;      // 相位2「血色地」的血雨区域机制
+    private LightningHazard lightningHazard;      // 相位3「虚空」的闪电区域机制
     private bool phaseTransitionStarted;          // 当前相位边界的演出是否已启动
     private InGameHud hud;
     private int normalsSinceLastElite = 0;  // 精英保底计数
@@ -83,6 +91,21 @@ public class LevelManager : MonoBehaviour
         // 初始化角色
         playerCharacter.Init(entityManager, abilityManager, statsManager);
         playerCharacter.OnDeath.AddListener(GameOver);
+        // 相位2「血色地」的血雨机制：运行时挂到 LevelManager 上，避免场景里漏挂组件
+        if (bloodRainGroundFrames != null && bloodRainGroundFrames.Length > 0
+            && bloodRainRainFrames != null && bloodRainRainFrames.Length > 0)
+        {
+            bloodRainHazard = GetComponent<BloodRainHazard>();
+            if (bloodRainHazard == null) bloodRainHazard = gameObject.AddComponent<BloodRainHazard>();
+            bloodRainHazard.Init(entityManager, playerCharacter, bloodRainGroundFrames, bloodRainRainFrames);
+        }
+        // 相位3「虚空」的闪电机制
+        if (lightningSheet != null)
+        {
+            lightningHazard = GetComponent<LightningHazard>();
+            if (lightningHazard == null) lightningHazard = gameObject.AddComponent<LightningHazard>();
+            lightningHazard.Init(entityManager, playerCharacter, lightningSheet);
+        }
         // 技能栏 / 进度条 / 受击反馈都挂在这里，统一注入依赖
         hud = InGameHud.Ensure();
         hud?.Bind(this.levelBlueprint, playerCharacter, abilityManager, entityManager);
@@ -278,6 +301,9 @@ public class LevelManager : MonoBehaviour
         if (activePhases == null) return;
         int target = GetCurrentPhaseIndex(levelTime);
         if (target == currentPhaseIndex) return;
+        // 离开任一区域机制相位时立刻停止旧机制与结算
+        bloodRainHazard?.Stop();
+        lightningHazard?.Stop();
         // 离开的相位打印实际刷怪分布，用于验收"每段刷怪构成符合配置"
         LogPhaseSpawnDistribution(currentPhaseIndex);
         currentPhaseIndex = target;
@@ -287,6 +313,22 @@ public class LevelManager : MonoBehaviour
             infiniteBackground.SetBackground(phase.background);
         if (enablePhaseLogs)
             Debug.Log($"[LevelManager] 进入相位 {currentPhaseIndex + 1}/{activePhases.Length}：「{phase.displayName}」（{levelTime:F1}s）");
+        if (IsBloodGroundPhase(currentPhaseIndex)) bloodRainHazard?.Begin();
+        if (IsLightningPhase(currentPhaseIndex)) lightningHazard?.Begin();
+    }
+
+    /// <summary>相位3触发闪电区域机制。</summary>
+    private bool IsLightningPhase(int phaseIndex)
+    {
+        return activePhases != null && phaseIndex == 2 && activePhases.Length > 2;
+    }
+
+    /// <summary>只认第 2 相位且显示名为「血色地」的关卡，避免误伤其他关卡的相位2。</summary>
+    private bool IsBloodGroundPhase(int phaseIndex)
+    {
+        return activePhases != null && phaseIndex == 1
+            && activePhases[phaseIndex].displayName != null
+            && activePhases[phaseIndex].displayName.Contains("血色地");
     }
 
     /// <summary>
@@ -376,6 +418,8 @@ public class LevelManager : MonoBehaviour
     public void GameOver()
     {
         runOver = true;
+        bloodRainHazard?.Stop();
+        lightningHazard?.Stop();
         Time.timeScale = 0;
         DataStoreLocator.Store.SettleRunReward(statsManager.CoinsGained);
         EndRun();
@@ -388,6 +432,8 @@ public class LevelManager : MonoBehaviour
     public void LevelPassed(Monster finalBossKilled)
     {
         runOver = true;
+        bloodRainHazard?.Stop();
+        lightningHazard?.Stop();
         Time.timeScale = 0;
         DataStoreLocator.Store.SettleRunReward(statsManager.CoinsGained);
         EndRun();

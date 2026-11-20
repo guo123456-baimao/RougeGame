@@ -26,7 +26,6 @@ public class Monster : IDamageable, ISpatialHashGridClient
     protected Coroutine hitAnimationCoroutine = null;
     protected bool alive = true;
     protected Transform centerTransform;
-
     // ---- 精英运行时状态：只在 Setup 写入，池回收时由 ResetRuntimeState 完整还原 ----
     protected bool isElite;
     protected EliteAffix eliteAffix = EliteAffix.None;
