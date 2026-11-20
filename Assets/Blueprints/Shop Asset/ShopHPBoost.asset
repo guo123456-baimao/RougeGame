@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6be908459160c84b8ccc5465e168b6f, type: 3}
+  m_Name: ShopHPBoost
+  m_EditorClassIdentifier: 
+  displayName: "\u751F\u547D"
+  cost: 60
+  icon: {fileID: -44862113, guid: 4a9825874034d4671b1dc9f6c8707eca, type: 3}
+  itemType: 0
+  boostType: 0
+  boostAmount: 10

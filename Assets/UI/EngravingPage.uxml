@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/engraving-page.uss?fileID=7433441132597879392&amp;guid=996d42e3ddc1d6542bb09f5fd824bb91&amp;type=3#engraving-page" />
+    <Style src="project://database/Assets/UI/ui-motion.uss?fileID=7433441132597879392&amp;guid=175b8b6d048b7a74daf22febcbf3e2c4&amp;type=3#ui-motion" />
+    <ui:VisualElement name="EngravingPage" class="page" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1906592757&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_56&quot;); background-color: rgb(255, 255, 255); -unity-slice-left: 10; -unity-slice-top: 10; -unity-slice-right: 10; -unity-slice-bottom: 10; -unity-background-image-tint-color: rgb(207, 207, 207);">
+        <ui:VisualElement class="lift lift--panel">
+            <ui:VisualElement name="PagePanel" class="page__panel anim d1" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1422755058&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_21&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 10; -unity-slice-top: 10; -unity-slice-right: 10; -unity-slice-bottom: 10;">
+                <ui:VisualElement class="page__stripe anim d2" />
+                <ui:VisualElement class="page__header" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=153856611&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_48&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 6; -unity-slice-top: 6; -unity-slice-right: 6; -unity-slice-bottom: 6; padding-bottom: 0;">
+                    <ui:VisualElement class="page__left">
+                        <ui:Button name="BackButton" class="icon-btn icon-btn--back" style="background-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1407626928&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_187&quot;);" />
+                        <ui:Label text="铭文强化" class="page__title" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="page__right">
+                        <ui:VisualElement name="CoinPill" class="pill" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1422755058&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_21&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 6; -unity-slice-top: 6; -unity-slice-right: 6; -unity-slice-bottom: 6; padding-top: 0; padding-left: 11px; padding-bottom: 2px;">
+                            <ui:Label text="金币" class="pill__k" style="color: rgb(0, 0, 0); font-size: 17px;" />
+                            <ui:Label name="CoinsText" text="0" class="pill__v pill__v--plain" style="-unity-background-image-tint-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="CountPill" class="pill" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1422755058&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_21&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; padding-right: 7px; padding-bottom: 1px; padding-top: 0; margin-top: 8px; margin-bottom: 7px; padding-left: 8px;">
+                            <ui:Label text="已装备" class="pill__k" style="color: rgb(0, 0, 0); font-size: 17px;" />
+                            <ui:Label name="SelectedCountText" text="0 / 3" class="pill__v" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="CardGrid" class="grid anim d3" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=-835320718&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_2&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 9; -unity-slice-top: 9; -unity-slice-right: 9; -unity-slice-bottom: 9;" />
+                <ui:VisualElement class="lift">
+                    <ui:VisualElement class="bottombar anim d4" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1179835107&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_209&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;">
+                        <ui:Label text="已装备" class="bottombar__label" style="color: rgb(0, 0, 0); font-size: 15px;" />
+                        <ui:VisualElement name="SlotRow" class="slot-row" />
+                        <ui:Label name="SlotInfoText" text="点击槽位可卸下铭文" class="bottombar__hint" style="color: rgb(0, 0, 0); font-size: 16px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

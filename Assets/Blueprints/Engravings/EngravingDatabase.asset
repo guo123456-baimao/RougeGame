@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1a4e9b52d3f4a86b0e1c927d5a3f61, type: 3}
+  m_Name: EngravingDatabase
+  m_EditorClassIdentifier: 
+  allEngravings:
+  - {fileID: 11400000, guid: 51e04a273efa98d48a442aac0887a40d, type: 2}
+  - {fileID: 11400000, guid: b6a861fb27a957c46a0e4c4537f7ce8e, type: 2}
+  - {fileID: 11400000, guid: c358369f04e15044bb66cbdc4b148bf2, type: 2}
+  - {fileID: 11400000, guid: 033b989663476b1468b8277585ba41a4, type: 2}
+  - {fileID: 11400000, guid: a0d296f166a55c841b957f394d3cabac, type: 2}
+  - {fileID: 11400000, guid: a38c67f9797c7ea48b40e236b734bec8, type: 2}
+  - {fileID: 11400000, guid: bca26133bac4ed442b4117dfc6c2fe88, type: 2}

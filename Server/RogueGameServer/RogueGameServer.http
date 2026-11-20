@@ -1,0 +1,6 @@
+@RogueGameServer_HostAddress = http://localhost:5186
+
+GET {{RogueGameServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

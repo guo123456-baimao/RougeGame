@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/character-page.uss?fileID=7433441132597879392&amp;guid=1902480a9be990b4782e7efcc0236855&amp;type=3#character-page" />
+    <Style src="project://database/Assets/UI/ui-motion.uss?fileID=7433441132597879392&amp;guid=175b8b6d048b7a74daf22febcbf3e2c4&amp;type=3#ui-motion" />
+    <ui:VisualElement name="CharacterPage" class="page">
+        <ui:VisualElement class="lift lift--panel">
+            <ui:VisualElement name="PagePanel" class="page__panel anim d1" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=1748785939&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_6&quot;); -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 0; -unity-slice-scale: 1px; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-background-image-tint-color: rgb(120, 87, 87);">
+                <ui:VisualElement class="page__stripe anim d2" />
+                <ui:VisualElement class="page__header" style="-unity-background-image-tint-color: rgb(255, 255, 255);">
+                    <ui:VisualElement class="page__left">
+                        <ui:Button name="BackButton" class="icon-btn icon-btn--back" style="background-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1407626928&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_187&quot;);" />
+                        <ui:Label text="角色选择" class="page__title" style="color: rgb(255, 255, 255); width: 66px; background-color: rgba(0, 0, 0, 0);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="page__right">
+                        <ui:VisualElement class="pill" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1238054451&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_171&quot;);">
+                            <ui:Label text="金币" class="pill__k" style="color: rgb(0, 0, 0); font-size: 13px;" />
+                            <ui:Label name="CoinsText" text="0" class="pill__v pill__v--plain" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="pill" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-853210613&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_172&quot;);">
+                            <ui:Label text="已解锁" class="pill__k" style="color: rgb(0, 0, 0); font-size: 13px;" />
+                            <ui:Label name="OwnedCountText" text="0 / 3" class="pill__v" style="color: rgb(216, 180, 87);" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="CardGrid" class="grid anim d3" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Setting%20menu.png?fileID=-1546969721&amp;guid=b1b6e7132377cb74fa27a9e88f263c63&amp;type=3#Setting menu_1&quot;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

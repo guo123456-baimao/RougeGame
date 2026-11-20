@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/login-page.uss?fileID=7433441132597879392&amp;guid=e04a2b0d9ad615d49bfbb263f6e63230&amp;type=3#login-page" />
+    <Style src="project://database/Assets/UI/register-page.uss?fileID=7433441132597879392&amp;guid=73124f23e6ca8a3459f0ecacc796d7b3&amp;type=3#register-page" />
+    <Style src="project://database/Assets/UI/ui-motion.uss?fileID=7433441132597879392&amp;guid=175b8b6d048b7a74daf22febcbf3e2c4&amp;type=3#ui-motion" />
+    <ui:VisualElement name="RegisterPage" class="cloud bg-shadow">
+        <ui:VisualElement name="RegisterPanel" class="cloud__panel anim d1" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1946867618&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_193&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;">
+            <ui:VisualElement class="cloud__stripe anim d2" />
+            <ui:VisualElement class="cloud__header" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1451439134&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_55&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 8; -unity-slice-top: 8; -unity-slice-right: 8; -unity-slice-bottom: 8; padding-bottom: -2px;">
+                <ui:Label text="注册" class="cloud__title" style="color: rgb(0, 0, 0); margin-left: 13px;" />
+                <ui:Button name="CloseButton" text="×" focusable="false" class="icon-btn" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1407626928&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_187&quot;);" />
+            </ui:VisualElement>
+            <ui:Label name="StateLabel" text="当前：本地存档（未登录也能玩）" class="cloud__state" style="color: rgb(0, 0, 0); font-size: 18px; margin-bottom: 4px;" />
+            <ui:VisualElement class="cloud__fields">
+                <ui:VisualElement class="field">
+                    <ui:Label text="账号" class="field__label" style="color: rgb(0, 0, 0); font-size: 18px; margin-top: -3px;" />
+                    <ui:TextField name="UsernameField" max-length="24" class="field__input" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1582144375&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_1&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 21; -unity-slice-top: 21; -unity-slice-right: 21; -unity-slice-bottom: 21;" />
+                </ui:VisualElement>
+                <ui:VisualElement class="field">
+                    <ui:Label text="密码" class="field__label" style="color: rgb(0, 0, 0); font-size: 18px;" />
+                    <ui:TextField name="PasswordField" max-length="64" class="field__input" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1582144375&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_1&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 14; -unity-slice-top: 14; -unity-slice-right: 14; -unity-slice-bottom: 14;" />
+                </ui:VisualElement>
+                <ui:VisualElement class="field field--last">
+                    <ui:Label text="确认密码" class="field__label" style="color: rgb(0, 0, 0); font-size: 18px;" />
+                    <ui:TextField name="ConfirmField" max-length="64" class="field__input" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1582144375&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_1&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 12; -unity-slice-top: 12; -unity-slice-right: 12; -unity-slice-bottom: 12;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label text="账号 3-24 位，密码至少 6 位" class="cloud__rule" style="color: rgb(0, 0, 0); font-size: 18px;" />
+            <ui:Label name="MessageLabel" text="注册后自动登录，金币与解锁会同步到服务器。" class="cloud__msg" style="color: rgb(0, 0, 0); font-size: 18px;" />
+            <ui:VisualElement class="footer footer-nav">
+                <ui:Button name="BackButton" text="返回登录" focusable="false" class="btn btn--ghost" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=902576953&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_47&quot;); color: rgb(0, 0, 0);" />
+                <ui:Button name="SubmitButton" text="注册并登录" focusable="false" class="btn btn--primary" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=902576953&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_47&quot;); background-color: rgb(176, 149, 105);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

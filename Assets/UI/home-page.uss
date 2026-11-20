@@ -1,0 +1,210 @@
+/* ============================================================
+   home-page.uss — 首页（UI Toolkit 版）
+   版式对齐设计稿：顶部深色标题栏 + 三个「图标方块 + 白底按钮」入口。
+   色板与 uGUI 首页一致：
+     标题栏 rgb(36,36,36) / 页面 rgb(46,46,46)
+     方块   rgb(58,58,58) / 按钮 rgb(255,255,255)
+   尺寸按 PanelSettings 的 1920x1080 参考分辨率写死。
+   注意：本版本（2022.3）的 flex gap 不生效，间距一律用 margin。
+   ============================================================ */
+
+/* ---------- 页面外壳 ---------- */
+.home {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(46, 46, 46);
+    /* 细颗粒噪点。本页底色是 rgb(46,46,46)，与内页的 rgb(11,13,16) 不同，
+       所以用 noise-home.png（同脚本、BASE 改成 46 后生成），避免整页被压暗。 */
+    background-image: url("project://database/Assets/UI/Textures/noise-home.png");
+    -unity-background-scale-mode: scale-and-crop;
+    /* UI Toolkit 默认字体没有中文字形，这里显式指向预烘焙的中文 FontAsset。
+       注意必须用 -unity-font-definition：-unity-font 在编辑器里能生效，
+       打包成 Player 后会被忽略，表现为所有文字都不渲染（图标和背景图正常）。
+       不要直接写 .ttf，否则运行时会克隆出 1024 的动态 FontAsset 并触发图集扩容报错。 */
+    -unity-font-definition: url("project://database/Assets/Fonts/Chinese/UITKChineseFont.asset");
+}
+
+/* ---------- 标题栏 ---------- */
+.home__titlebar {
+    height: 181px;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.home__title {
+    flex-grow: 1;
+    font-size: 96px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    padding-top: 8px;
+}
+
+/* ---------- 账户区 ----------
+   左侧占位与账户区同宽，标题才不会被挤偏。
+   首页是大画布版式（标题 96px），这里按同一套比例取 32px 字号，
+   不与内页 11/13/18 的令牌档位混用。
+   未登录只显示 [登录]，已登录显示「账户名 + [退出]」，两者互斥。 */
+.home__account-slot {
+    width: 400px;
+    flex-shrink: 0;
+}
+.home__account {
+    width: 400px;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.home__account-btn {
+    width: 240px;
+    height: 64px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-radius: 12px;
+    background-color: rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    -unity-text-align: middle-center;
+    scale: 1;
+    translate: 0 0;
+    transition-property: background-color, scale, translate;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-out;
+}
+.home__account-btn:hover  { background-color: rgb(68, 68, 68); scale: 1.04; translate: 0 -4px; }
+.home__account-btn:active { background-color: rgb(50, 50, 50); scale: 0.96; translate: 0 0; }
+
+/* 账户名：账号最长 24 位，给一个上限并让它自己截断，保证「退出」按钮永远在固定位置 */
+.home__account-name {
+    max-width: 260px;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 4px;
+}
+
+.home__account-logout {
+    width: 112px;
+    height: 44px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-radius: 8px;
+    background-color: rgb(58, 58, 58);
+    color: rgb(224, 91, 91);
+    font-size: 20px;
+    -unity-text-align: middle-center;
+    scale: 1;
+    transition-property: background-color, scale;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-out;
+}
+.home__account-logout:hover  { background-color: rgb(68, 68, 68); scale: 1.04; }
+.home__account-logout:active { background-color: rgb(50, 50, 50); scale: 0.96; }
+
+/* 隐藏：由代码切换 display，抽出来是为了避免和 hover 的样式互相覆盖 */
+.hidden {
+    display: none;
+}
+
+/* ---------- 三个入口 ---------- */
+.home__entries {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 176px;
+}
+
+.home-entry {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+/* 图标方块：整块都可点，效果等同下方按钮 */
+.home-entry__tile {
+    width: 320px;
+    height: 320px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 40px;
+    background-color: rgb(58, 58, 58);
+    align-items: center;
+    justify-content: center;
+    /* Button 默认样式自带 4px/2px 外边距，会把外层 .lift--tile 撑大成一圈黑框，
+       必须清零，投影才会只在底部露 4px。 */
+    margin: 0;
+    /* 基础态就抬起 4px，把外层 .lift--tile 的黑底露成投影。
+       元素尺寸大（320x320），位移与缩放量都要比内页大才看得出物理感。 */
+    scale: 1;
+    translate: 0 -4px;
+    transition-property: background-color, scale, translate;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-out;
+}
+.home-entry__tile:hover  { background-color: rgb(68, 68, 68); scale: 1.03; translate: 0 -14px; }
+.home-entry__tile:active { background-color: rgb(50, 50, 50); scale: 0.98; translate: 0 -2px; }
+
+/* 像素图标：按原比例缩放居中，不拉伸 */
+.home-entry__icon {
+    width: 160px;
+    height: 160px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+.home-entry__icon--shop {
+    background-image: url("project://database/Assets/Sprites/UI/UICoin.png");
+}
+.home-entry__icon--start {
+    background-image: url("project://database/Assets/Sprites/Kenney/Skull.png");
+}
+.home-entry__icon--upgrade {
+    background-image: url("project://database/Assets/Sprites/Weapons/Bat.png");
+}
+
+/* ---------- 白底按钮 ---------- */
+.home-entry__button {
+    width: 450px;
+    height: 128px;
+    margin-top: 144px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+    color: rgb(36, 36, 36);
+    font-size: 96px;
+    -unity-text-align: middle-center;
+    scale: 1;
+    translate: 0 0;
+    transition-property: background-color, scale, translate;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-out;
+}
+.home-entry__button:hover  { background-color: rgb(236, 236, 236); scale: 1.04; translate: 0 -4px; }
+.home-entry__button:active { background-color: rgb(212, 212, 212); scale: 0.96; translate: 0 0; }
+
+/* ---------- 叠层伪造投影 ----------
+   本页只引入 ui-tokens.uss + home-page.uss，不引入 ui-components.uss，
+   所以 .lift 必须在这里重新写一份，不能依赖 ui-components.uss 的定义。
+   方块圆角是 40px（不是 UI 的 8px），必须自定义 .lift--tile。
+   抬起量写在 .home-entry__tile 自己身上，避免和这里的子选择器打架。 */
+.lift {
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 40px;
+    overflow: visible;
+}
+.lift--tile:hover { background-color: rgba(0, 0, 0, 0.78); }

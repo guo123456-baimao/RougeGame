@@ -1,0 +1,32 @@
+/* ============================================================
+   ui-motion.uss — 页面入场动画
+   USS 不支持 @keyframes，一次性动画只能由 C# 切换状态类驱动：
+     UIAnimator.PlayEnter(root) 先给所有 .anim 元素加上 .anim-hidden，
+     隔一帧后按 d1~d4 错峰移除，过渡即触发。
+
+   两条硬约束：
+     1. USS 不支持 transform 简写，位移必须写 translate、缩放必须写 scale。
+     2. .anim 会覆盖元素自身的 transition-property，
+        所以只给静态容器加 .anim，不要加到 .card / .btn / .home-entry__tile
+        这类自带 hover 过渡的元素上，否则 hover 与入场会互相顶掉。
+
+   另：.anim 故意不写 translate: 0 0。面板与底栏是 .lift > * 的子元素，
+   那条规则（translate: 0 -4px）与 .anim 同权重、按引入顺序决胜；
+   一旦在这里写死 0，叠层伪造出来的 4px 投影就没了。
+   静止位移交给各自的 USS，入场只负责把元素从下方抬回来。
+   ============================================================ */
+
+.anim {
+    transition-property: opacity, translate;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+/* 初始态：由 C# 添加，隔一帧后移除即触发过渡。
+   权重与 .lift > * 相同，且本文件在 UXML 里最后引入，因此能压住 0 -4px。 */
+.anim-hidden { opacity: 0; translate: 0 36px; }
+
+/* 错峰档位 d1~d4：只作为标记存在，UIAnimator 读类名算延迟
+   （16ms 起、每档 +80ms），延迟在 C# 里给，不依赖 USS 的 transition-delay，
+   避免不同 Unity 版本对 transition-delay 的支持差异。
+   调节奏改 UIAnimator.StaggerStepMs。 */

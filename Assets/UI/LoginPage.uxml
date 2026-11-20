@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/login-page.uss?fileID=7433441132597879392&amp;guid=e04a2b0d9ad615d49bfbb263f6e63230&amp;type=3#login-page" />
+    <Style src="project://database/Assets/UI/ui-motion.uss?fileID=7433441132597879392&amp;guid=175b8b6d048b7a74daf22febcbf3e2c4&amp;type=3#ui-motion" />
+    <ui:VisualElement name="LoginPage" class="cloud bg-shadow">
+        <ui:VisualElement name="LoginPanel" class="cloud__panel anim d1" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=27279872&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_4&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 12; -unity-slice-top: 12; -unity-slice-right: 12; -unity-slice-bottom: 12;">
+            <ui:VisualElement class="cloud__stripe anim d2" />
+            <ui:VisualElement class="cloud__header" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1598974019&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_18&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; padding-bottom: 3px;">
+                <ui:Label text="登录" class="cloud__title" />
+                <ui:Button name="CloseButton" text="×" focusable="false" class="icon-btn" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1407626928&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_187&quot;); background-color: rgb(249, 248, 227); margin-top: 12px; margin-bottom: 6px; padding-top: 12px;" />
+            </ui:VisualElement>
+            <ui:Label name="StateLabel" text="当前：本地存档（未登录也能玩）" class="cloud__state" style="color: rgb(255, 255, 255); font-size: 22px; margin-top: -2px; margin-bottom: 4px;" />
+            <ui:VisualElement class="cloud__fields">
+                <ui:VisualElement class="field">
+                    <ui:Label text="账号" class="field__label" style="color: rgb(0, 0, 0); -unity-text-align: middle-left; font-size: 22px;" />
+                    <ui:TextField name="UsernameField" max-length="24" class="field__input" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1150983063&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_54&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; color: rgb(0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement class="field field--last">
+                    <ui:Label text="密码" class="field__label" style="color: rgb(0, 0, 0); font-size: 22px;" />
+                    <ui:TextField name="PasswordField" max-length="64" class="field__input" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=-936266632&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_3&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 9; -unity-slice-top: 9; -unity-slice-right: 9; -unity-slice-bottom: 9; color: rgb(0, 0, 0);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="MessageLabel" text="未登录也可以正常游戏，存档保存在本机。" class="cloud__msg" style="color: rgb(0, 0, 0); font-size: 19px;" />
+            <ui:VisualElement class="footer footer-nav">
+                <ui:Button name="RegisterButton" text="注册新账号" focusable="false" class="btn btn--ghost" style="color: rgb(2, 2, 2); background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=-287478651&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_0&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 10; -unity-slice-top: 10; -unity-slice-right: 10; -unity-slice-bottom: 10;" />
+                <ui:Button name="LoginButton" text="登录" focusable="false" class="btn btn--primary" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=27279872&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_4&quot;); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 17; -unity-slice-top: 17; -unity-slice-right: 17; -unity-slice-bottom: 17; color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,41 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/character-page.uss?fileID=7433441132597879392&amp;guid=1902480a9be990b4782e7efcc0236855&amp;type=3#character-page" />
+    <ui:VisualElement name="CardRoot" class="lift lift--card" style="height: 289px; width: 567px;">
+        <ui:VisualElement name="Card" class="card" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-2020569506&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_3&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 8; -unity-slice-top: 8; -unity-slice-right: 8; -unity-slice-bottom: 8; height: 293px; width: 568px;">
+            <ui:VisualElement name="CardTop" class="card__top">
+                <ui:VisualElement name="PortraitBox" class="card__portrait">
+                    <ui:Image name="Portrait" scale-mode="scale-to-fit" class="card__portrait-image" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=-287478651&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_0&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 7; -unity-slice-top: 7; -unity-slice-right: 7; -unity-slice-bottom: 7; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(255, 213, 65);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Head" class="card__head">
+                    <ui:Label name="NameLabel" text="角色名" class="card__name" style="color: rgb(0, 0, 0); font-size: 20px; -unity-font-style: normal;" />
+                    <ui:Label name="TagLabel" text="已解锁" class="card__tag" style="font-size: 20px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Stats" class="card__stats">
+                <ui:VisualElement class="stat" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=2010571038&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_119&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;">
+                    <ui:Label text="生命" class="stat__k" style="color: rgb(0, 0, 0); font-size: 19px;" />
+                    <ui:Label name="HpValue" text="100" class="stat__v" style="font-size: 17px; color: rgb(0, 0, 0); -unity-font-style: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement class="stat" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-717971462&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_121&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;">
+                    <ui:Label text="护甲" class="stat__k" style="color: rgb(0, 0, 0); font-size: 19px;" />
+                    <ui:Label name="ArmorValue" text="0" class="stat__v" style="font-size: 17px; color: rgb(0, 0, 0); -unity-font-style: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement class="stat" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=323057347&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_156&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;">
+                    <ui:Label text="移速" class="stat__k" style="color: rgb(0, 0, 0); font-size: 19px;" />
+                    <ui:Label name="MovespeedValue" text="100%" class="stat__v" style="font-size: 17px; color: rgb(0, 0, 0); -unity-font-style: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement class="stat" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1719019245&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_188&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;">
+                    <ui:Label text="幸运" class="stat__k" style="color: rgb(0, 0, 0); font-size: 19px;" />
+                    <ui:Label name="LuckValue" text="1" class="stat__v" style="font-size: 17px; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0); -unity-font-style: normal;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Abilities" class="card__abilities" style="width: 91px;">
+                <ui:Label text="初始能力" class="card__abilities-label" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-809199440&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_15&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 7; -unity-slice-top: 7; -unity-slice-right: 7; -unity-slice-bottom: 7; color: rgb(0, 0, 0); font-size: 19px; margin-top: 3px; padding-top: 10px; padding-bottom: 10px; width: 81px; margin-right: -2px; padding-right: -2px;" />
+                <ui:VisualElement name="AbilitiesRow" class="card__abilities-row" />
+            </ui:VisualElement>
+            <ui:Button name="ActionButton" text="选择角色" class="btn card__action" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1582144375&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_1&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 11; -unity-slice-top: 11; -unity-slice-right: 11; -unity-slice-bottom: 11; background-color: rgb(255, 255, 255); -unity-background-image-tint-color: rgb(255, 255, 255); font-size: 17px; margin-top: 11px; text-overflow: clip; -unity-font-style: normal;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

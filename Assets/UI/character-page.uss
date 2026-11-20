@@ -1,0 +1,170 @@
+/* ============================================================
+   character-page.uss — 角色选择页组件
+   所有色值 / 间距 / 字号 / 圆角均取自 ui-tokens.uss
+   版式与 engraving-page.uss、shop-page.uss 保持一致
+   ============================================================ */
+
+/* ---------- 页面外壳 ---------- */
+.page {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(11, 13, 16);
+    /* 细颗粒噪点，与 shop-page / engraving-page 保持同一张图、同一套参数 */
+    background-image: url("project://database/Assets/UI/Textures/noise-mid.png");
+    -unity-background-scale-mode: scale-and-crop;
+    padding: 24px;
+    flex-direction: column;
+}
+
+/* 内容面板：把整页内容收进一块带边框的台面 */
+.page__panel {
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: rgb(21, 24, 29);
+    border-width: 1px;
+    border-color: rgb(58, 65, 80);
+    border-radius: 8px;
+}
+.page__stripe {
+    height: 4px;
+    border-radius: 3px;
+    background-color: rgb(216, 166, 87);
+    margin-bottom: 8px;
+}
+
+/* ---------- 顶栏 ---------- */
+.page__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(42, 47, 58);
+}
+.page__left { flex-direction: row; align-items: center; gap: 12px; }
+.page__right { flex-direction: row; align-items: center; gap: 12px; }
+.page__title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgb(233, 235, 240);
+}
+
+/* ---------- 顶栏胶囊（金币 / 已解锁） ---------- */
+.pill {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 6px;
+    background-color: rgb(28, 32, 42);
+    border-width: 1px;
+    border-color: rgb(42, 47, 58);
+    scale: 1;
+    transition-property: background-color, border-color, scale;
+    transition-duration: 0.12s;
+    transition-timing-function: ease-out;
+}
+.pill:hover { scale: 1.03; }
+.pill__k { font-size: 11px; color: rgb(143, 153, 169); }
+.pill__v { font-size: 13px; -unity-font-style: bold; color: rgb(216, 166, 87); }
+.pill__v--plain { color: rgb(233, 235, 240); }
+
+/* ---------- 角色卡片网格（flex-wrap 模拟 grid） ---------- */
+.grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    /* 卡片下方多出 4px 投影外溢，行间距从 12 加到 16 留位 */
+    gap: 16px;
+    padding-top: 12px;
+    flex-grow: 1;
+}
+
+/* 卡片的宽度转移到投影层：.lift--card 才是 .grid 的 flex item，
+   百分比基准随之改变；卡片本体改为撑满外层，min-width 必须清零。
+   本页是 31% / 264px，与商店页、铭文页不同，不要改成 32%。 */
+.lift--card { width: 31%; min-width: 264px; }
+.card {
+    width: 100%;
+    min-width: 0;
+    translate: 0 -4px;
+    scale: 1;
+    transition-property: background-color, border-color, scale, translate;
+    transition-duration: 0.14s;
+    transition-timing-function: ease-out;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(28, 32, 42);
+    border-width: 1px;
+    border-color: rgb(42, 47, 58);
+    border-radius: 8px;
+    padding: 12px;
+}
+.card:hover { scale: 1.015; }
+.card--owned { border-color: rgb(216, 166, 87); }
+.card--locked { opacity: 0.82; }
+
+/* ---------- 卡片头部：立绘 + 名字 ---------- */
+.card__top { flex-direction: row; align-items: center; gap: 10px; }
+.card__portrait {
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    background-color: rgb(21, 24, 29);
+    border-width: 1px;
+    border-color: rgb(58, 65, 80);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.card__portrait-image { width: 100%; height: 100%; }
+
+.card__head { flex-direction: column; gap: 4px; flex-grow: 1; }
+.card__name { font-size: 13px; -unity-font-style: bold; color: rgb(233, 235, 240); }
+.card__tag { font-size: 11px; color: rgb(95, 191, 127); }
+.card__tag--locked { color: rgb(143, 153, 169); }
+
+/* ---------- 属性表 ---------- */
+.card__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.stat {
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+    min-width: 60px;
+    padding: 6px;
+    background-color: rgb(26, 30, 38);
+    border-radius: 6px;
+    align-items: center;
+}
+.stat__k { font-size: 11px; color: rgb(143, 153, 169); }
+.stat__v { font-size: 13px; -unity-font-style: bold; color: rgb(233, 235, 240); }
+
+/* ---------- 初始能力 ---------- */
+.card__abilities { flex-direction: column; gap: 6px; }
+.card__abilities-label { font-size: 11px; color: rgb(143, 153, 169); }
+.card__abilities-row { flex-direction: row; align-items: center; gap: 6px; }
+.card__ability {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: rgb(21, 24, 29);
+    border-width: 1px;
+    border-color: rgb(58, 65, 80);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.card__ability-icon { width: 100%; height: 100%; }
+.card__ability-none { font-size: 11px; color: rgb(143, 153, 169); }
+
+.card__action { margin-top: 2px; }

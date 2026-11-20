@@ -1,0 +1,27 @@
+.vs/
+.vscode/
+Library/
+Temp/
+obj/
+Logs/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+
+# 打包产物（120MB 以上，且随时可重新生成，不进版本库）
+Builds/
+
+# 演讲稿与PPT不入库
+RogueGame_答辩演讲稿.md
+RogueGame_项目答辩.pptx
+*.pptx
+
+# 个人编辑器设置不入库
+UserSettings/
+
+# 课程文档（日程表、流程说明）不入库
+Docs~/
+Docs/ASP.NET与MySQL模块流程说明.md

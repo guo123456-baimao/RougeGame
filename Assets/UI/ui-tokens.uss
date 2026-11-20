@@ -1,0 +1,89 @@
+/* ============================================================
+   tokens.uss — 设计令牌
+   规则：AI 只允许使用本文件里的类，禁止在 UXML 内联 style 写裸值。
+   换肤时只改这一个文件。
+   注意：UI Toolkit 的 USS 不支持 CSS 变量（var(--x)），
+   所以令牌只能以「工具类」的形式存在。
+   ============================================================ */
+
+/* ---- 色彩：bg / surface / raised / border / text / muted / accent ---- */
+.bg-base    { background-color: rgb(11, 13, 16); }
+.bg-surface { background-color: rgb(21, 24, 29); }
+.bg-raised  { background-color: rgb(28, 32, 42); }
+.bg-accent  { background-color: rgb(216, 166, 87); }
+
+.bd-base    { border-color: rgb(42, 47, 58); }
+.bd-strong  { border-color: rgb(58, 65, 80); }
+.bd-hover   { border-color: rgb(93, 101, 115); }
+.bd-accent  { border-color: rgb(216, 166, 87); }
+
+.t-primary  { color: rgb(233, 235, 240); }
+.t-secondary{ color: rgb(184, 192, 206); }
+.t-muted    { color: rgb(143, 153, 169); }
+.t-accent   { color: rgb(216, 166, 87); }
+.t-up       { color: rgb(95, 191, 127); }
+.t-down     { color: rgb(224, 91, 91); }
+
+/* ---- 投影：叠层伪造，用于 .lift ---- */
+.bg-shadow { background-color: rgba(0, 0, 0, 0.55); }
+
+/* ---- 间距：只允许 4 的倍数 ---- */
+.p-4  { padding: 4px; }   .p-8  { padding: 8px; }
+.p-12 { padding: 12px; }  .p-16 { padding: 16px; }
+.p-24 { padding: 24px; }  .p-32 { padding: 32px; }
+
+.px-16 { padding-left: 16px; padding-right: 16px; }
+.py-12 { padding-top: 12px; padding-bottom: 12px; }
+.pb-8  { padding-bottom: 8px; }
+.pb-16 { padding-bottom: 16px; }
+.pt-16 { padding-top: 16px; }
+.pt-20 { padding-top: 20px; }
+.pt-24 { padding-top: 24px; }
+
+/* gap 除 4 的倍数外，额外允许 1px —— 仅用于列表分隔线 */
+.gap-1  { gap: 1px; }
+.gap-4  { gap: 4px; }   .gap-8  { gap: 8px; }
+.gap-12 { gap: 12px; }  .gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; }
+
+/* ---- 圆角 ---- */
+.r-3  { border-radius: 3px; }
+.r-6  { border-radius: 6px; }
+.r-8  { border-radius: 8px; }
+.r-14 { border-radius: 14px; }
+
+/* ---- 描边 ---- */
+.bdw-1 { border-width: 1px; }
+
+/* ---- 字号：只有 11 / 13 / 18 三档 ---- */
+.fs-11 { font-size: 11px; }
+.fs-13 { font-size: 13px; }
+.fs-18 { font-size: 18px; }
+.fw-bold { -unity-font-style: bold; }
+
+/* ---- 布局原子（min 尺寸） ---- */
+.h-28 { height: 28px; }  .w-28 { width: 28px; }
+.h-38 { height: 38px; }
+.h-6  { height: 6px; }
+.row { flex-direction: row; }
+.col { flex-direction: column; }
+.center { align-items: center; justify-content: center; }
+.spread { justify-content: space-between; }
+
+/* ---- 中文字体 ----
+   UI Toolkit 默认字体（LegacyRuntime）不含中文字形。编辑器里会 fallback 到系统字体，
+   所以开发时看不出问题；一旦打包成 Player，所有中文（含按钮文字）直接不渲染。
+   这里统一给各页面根类设置中文字体，子元素全部继承。
+   必须用 -unity-font-definition：-unity-font 在 Player 中会被忽略。
+
+   注意：这里引用的是预烘焙的 FontAsset（UITKChineseFont.asset），**不要**直接写 TTF。
+   直接指向 .ttf 时，UI Toolkit 会在运行时用 1024x1024 的默认参数现场克隆一份动态
+   FontAsset；字符一多图集就放不下，TextCore 会开第二张图集，而那张运行时纹理的引用
+   随后失效，于是每帧抛 MissingReferenceException（m_AtlasTextures），落在第二张图集
+   上的字全部渲染不出来（表现为强化铭文页里最后一张卡片只剩图片、没有文字）。
+   改成引用 2048x2048、已烘焙全部用字的 FontAsset 即可彻底避免运行时扩容。 */
+.page,
+.cloud,
+.home {
+    -unity-font-definition: url("project://database/Assets/Fonts/Chinese/UITKChineseFont.asset");
+}

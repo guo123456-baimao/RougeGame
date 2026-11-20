@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 88eb8d131bf693b499f1d2637147abf0
+  m_SerializeEntries:
+  - m_GUID: 133471e07c9c24346911eb05f77995a2
+    m_Address: UI/HUD Theme
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12adb3a92ed404612906d2c1fe4b586e
+    m_Address: Assets/Prefabs/Monsters/Default Melee Monster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfcf798c11f284752815ead20a8dbaeb
+    m_Address: Assets/Prefabs/Monsters/Default Ranged Monster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b21d49c07805e4c2c8cab56371c5aad6
+    m_Address: Assets/Prefabs/Monsters/Default Boomerang Monster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f221b6d092ee543038a69c17c526bab0
+    m_Address: Assets/Prefabs/Monsters/Default Throwing Monster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf088821f793b4654a2ba39cb4266ae9
+    m_Address: Assets/Prefabs/Monsters/Default Boss Monster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4fabfdfdc6c484336807c53a4f93611d
+    m_Address: "Assets/Prefabs/Exp Gem/\u7D93\u9A57\u7403.prefab"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abf49d6cb814647109c1773c37109e8e
+    m_Address: "Assets/Prefabs/Coin/\u91D1\u5E63.prefab"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c124933462f2241329030e7c29e201ab
+    m_Address: "Assets/Prefabs/Chest/\u5BF6\u7BB1.prefab"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d01182fe4b754a1ab28c215406b36b1
+    m_Address: Assets/Prefabs/Text/Damage Text.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca21385e12ddd46a59abd05d62a778bc
+    m_Address: Assets/Prefabs/Chest/Bomb.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 258c15079a6434b34906221b5d37fef5
+    m_Address: Assets/Prefabs/Chest/Health.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33f802a3122ee457bb0af697a232abc4
+    m_Address: Assets/Prefabs/Chest/Magnet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 117fe352ae25741009f5067e2f424f17
+    m_Address: Assets/Prefabs/Chest/Red Potion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fccf103991ae9f54c89ebee6e767d9b4, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 952e1a36b732b734186f15e60f850f13, type: 2}
+    - {fileID: 11400000, guid: 27604436b8571be4491e062e33e291f5, type: 2}

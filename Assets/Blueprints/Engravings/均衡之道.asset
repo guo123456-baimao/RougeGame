@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e0f96dd8800824c94f133a587d3bc5, type: 3}
+  m_Name: "\u5747\u8861\u4E4B\u9053"
+  m_EditorClassIdentifier: 
+  engravingId: vampire_balanced
+  displayName: "\u5747\u8861\u4E4B\u9053"
+  description: "\u5168\u5C5E\u6027 +10%"
+  curseDescription: "\u65E0\u8BC5\u5492"
+  icon: {fileID: -944711722, guid: be55291aae08d434db3da3b59db3ab4a, type: 3}
+  unlockCost: 800
+  hpMultiplier: 1.1
+  damageMultiplier: 1.1
+  speedMultiplier: 1.1
+  lifestealChance: 0
+  lifestealAmount: 0
+  armorValue: 2
+  luckValue: 1
+  curseHpMultiplier: 1
+  curseDamageMultiplier: 1
+  curseSpeedMultiplier: 1
+  curseArmorValue: 0

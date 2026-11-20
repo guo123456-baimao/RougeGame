@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f018e420e4c57844a7fe78d4ee97d29, type: 3}
+  m_Name: HUD Theme
+  m_EditorClassIdentifier: 
+  healthFill: {r: 0.86, g: 0.2, b: 0.26, a: 1}
+  healthLag: {r: 1, g: 0.82, b: 0.35, a: 1}
+  expFill: {r: 0.24, g: 0.78, b: 0.94, a: 1}
+  expLag: {r: 0.75, g: 0.95, b: 1, a: 0.9}
+  bossFill: {r: 0.92, g: 0.3, b: 0.18, a: 1}
+  bossLag: {r: 1, g: 0.74, b: 0.28, a: 1}
+  progressFill: {r: 0.55, g: 0.86, b: 0.45, a: 1}
+  trackColor: {r: 0.05, g: 0.06, b: 0.09, a: 0.78}
+  frameColor: {r: 1, g: 1, b: 1, a: 0.18}
+  textColor: {r: 0.96, g: 0.97, b: 1, a: 1}
+  textDimColor: {r: 0.72, g: 0.76, b: 0.84, a: 1}
+  warningColor: {r: 1, g: 0.32, b: 0.32, a: 1}
+  coinColor: {r: 1, g: 0.83, b: 0.3, a: 1}
+  expColor: {r: 0.45, g: 0.9, b: 1, a: 1}
+  healColor: {r: 0.45, g: 0.95, b: 0.55, a: 1}
+  damageVignette: {r: 1, g: 0.12, b: 0.16, a: 1}
+  levelUpFlash: {r: 1, g: 0.94, b: 0.72, a: 1}
+  slotFrame: {r: 1, g: 1, b: 1, a: 0.22}
+  slotBackground: {r: 0.06, g: 0.07, b: 0.11, a: 0.85}
+  cooldownMask: {r: 0, g: 0, b: 0, a: 0.68}
+  slotSize: 64
+  slotSpacing: 10
+  lagBarDelay: 0.16
+  lagBarSpeed: 1.6
+  lowHealthThreshold: 0.25
+  lowHealthPulseSpeed: 5
+  pickupTextDuration: 0.85
+  pickupTextRise: 72
+  damageFlashDuration: 0.38
+  levelUpFlashDuration: 0.5
+  slotPopDuration: 0.3
+  barAppearDuration: 0.25
+  fontOverride: {fileID: 11400000, guid: 88025d21c2f0d8746872deb08386407e, type: 2}
+  bossLabel: BOSS
+  timeToBossLabel: 'TO BOSS '

@@ -1,0 +1,110 @@
+.cloud {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    -unity-font-definition: url("project://database/Assets/Fonts/Chinese/UITKChineseFont.asset?fileID=11400000&guid=bedd34a2e37d5714c989d8bb7717bd7a&type=2#UITKChineseFont");
+}
+
+.cloud__panel {
+    width: 560px;
+    flex-direction: column;
+    padding: 24px;
+    background-color: rgb(21, 24, 29);
+    border-width: 1px;
+    border-color: rgb(58, 65, 80);
+    border-radius: 8px;
+}
+
+.cloud__panel > * {
+    margin-bottom: 16px;
+}
+
+.footer-nav {
+    margin-bottom: 0;
+}
+
+.cloud__stripe {
+    height: 4px;
+    border-radius: 3px;
+    background-color: rgb(216, 166, 87);
+}
+
+.cloud__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(42, 47, 58);
+}
+
+.cloud__title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgb(233, 235, 240);
+}
+
+.cloud__state {
+    font-size: 11px;
+    color: rgb(143, 153, 169);
+    padding-top: 4px;
+}
+
+.cloud__fields {
+    flex-direction: column;
+    padding-top: 8px;
+}
+
+.field {
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.field--last {
+    margin-bottom: 0;
+}
+
+.field__label {
+    font-size: 11px;
+    color: rgb(143, 153, 169);
+}
+
+.field__input {
+    height: 38px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(28, 32, 42);
+    border-width: 1px;
+    border-color: rgb(42, 47, 58);
+    border-radius: 6px;
+    color: rgb(233, 235, 240);
+    font-size: 13px;
+}
+
+.field__input:focus {
+    border-color: rgb(216, 166, 87);
+}
+
+.field__input .unity-text-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    -unity-text-align: middle-left;
+    -unity-caret-color: rgb(216, 166, 87);
+    -unity-selection-color: rgba(216, 166, 87, 0.35);
+}
+
+.cloud__msg {
+    height: 16px;
+    font-size: 11px;
+    color: rgb(143, 153, 169);
+}
+
+.cloud__msg--ok {
+    color: rgb(95, 191, 127);
+}
+
+.cloud__msg--err {
+    color: rgb(224, 91, 91);
+}

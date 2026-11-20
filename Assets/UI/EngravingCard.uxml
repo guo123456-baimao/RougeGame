@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/engraving-page.uss?fileID=7433441132597879392&amp;guid=996d42e3ddc1d6542bb09f5fd824bb91&amp;type=3#engraving-page" />
+    <ui:VisualElement name="CardRoot" class="lift lift--card">
+        <ui:VisualElement name="Card" class="card" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=937631472&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_190&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 2; -unity-slice-top: 2; -unity-slice-right: 2; -unity-slice-bottom: 2; -unity-background-image-tint-color: rgb(105, 210, 212);">
+            <ui:VisualElement name="CardTop" class="card__top">
+                <ui:VisualElement name="IconBox" class="card__icon">
+                    <ui:Image name="Icon" scale-mode="scale-to-fit" class="card__icon-image" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1526056683&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_22&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 2; -unity-slice-top: 2; -unity-slice-right: 2; -unity-slice-bottom: 2;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Head" class="card__head">
+                    <ui:Label name="NameLabel" text="铭文名" class="card__name" style="color: rgb(0, 0, 0); -unity-font-style: normal; font-size: 18px;" />
+                    <ui:Label name="StateLabel" text="未装备" class="card__state" style="color: rgb(0, 0, 0); font-size: 15px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="EffectLabel" text="效果：攻击 +10%" class="card__effect" style="font-size: 16px; color: rgb(231, 0, 255); background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1385339596&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_2&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5;" />
+            <ui:Label name="CurseLabel" text="诅咒：无" class="card__curse card__curse--none" style="color: rgb(255, 5, 0); font-size: 18px; background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1385339596&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_2&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4;" />
+            <ui:Button name="ActionButton" text="装备" class="btn card__action" style="font-size: 18px; -unity-font-style: normal; background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1582144375&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_1&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 3; -unity-slice-top: 3; -unity-slice-right: 3; -unity-slice-bottom: 3; color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

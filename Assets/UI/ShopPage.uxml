@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/ui-components.uss?fileID=7433441132597879392&amp;guid=e4db1021f16cd174f8a38fd34fa4226c&amp;type=3#ui-components" />
+    <Style src="project://database/Assets/UI/shop-page.uss?fileID=7433441132597879392&amp;guid=86f4f66929acf364f8f32a9ea1702aba&amp;type=3#shop-page" />
+    <Style src="project://database/Assets/UI/ui-motion.uss?fileID=7433441132597879392&amp;guid=175b8b6d048b7a74daf22febcbf3e2c4&amp;type=3#ui-motion" />
+    <ui:VisualElement name="ShopPage" class="page">
+        <ui:VisualElement class="lift lift--panel">
+            <ui:VisualElement name="PagePanel" class="page__panel anim d1" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-579310620&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_101&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 7; -unity-slice-top: 7; -unity-slice-right: 7; -unity-slice-bottom: 7; -unity-background-image-tint-color: rgb(202, 202, 202);">
+                <ui:VisualElement class="page__stripe anim d2" />
+                <ui:VisualElement class="page__header" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1422755058&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_21&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 13; -unity-slice-top: 13; -unity-slice-right: 13; -unity-slice-bottom: 13; padding-bottom: 9px; -unity-background-image-tint-color: rgb(255, 255, 255);">
+                    <ui:VisualElement class="page__left">
+                        <ui:Button name="BackButton" class="icon-btn icon-btn--back" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1955436217&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_123&quot;); -unity-slice-left: 1; -unity-slice-top: 1; -unity-slice-right: 1; -unity-slice-bottom: 1; width: 40px; height: 40px;" />
+                        <ui:Label text="商店" class="page__title" style="color: rgb(0, 0, 0);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="page__right">
+                        <ui:VisualElement name="CoinPill" class="pill" style="margin-top: 1px; background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=1751314706&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_8&quot;);">
+                            <ui:Label text="金币" class="pill__k" style="font-size: 14px; color: rgb(0, 0, 0); margin-top: 0;" />
+                            <ui:Label name="CoinsText" text="0" class="pill__v pill__v--plain" style="margin-top: -2px;" />
+                            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=2087829962&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_154&quot;); -unity-background-scale-mode: stretch-to-fill; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 6px; background-color: rgb(255, 255, 255); padding-top: 14px; padding-right: 14px; padding-bottom: 14px; padding-left: 14px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="CountPill" class="pill" style="margin-top: 1px; background-image: url(&quot;project://database/Assets/Sprites/UI/Inventory_Blocks_Spritesheet.png?fileID=1751314706&amp;guid=dc7dd367a7aa6194289473fd9607d513&amp;type=3#Inventory_Blocks_Spritesheet_8&quot;);">
+                            <ui:Label text="本局购买" class="pill__k" style="font-size: 14px; color: rgb(0, 0, 0); margin-top: -1px;" />
+                            <ui:Label name="PurchasedCountText" text="0 / 3" class="pill__v" style="color: rgb(255, 255, 255); margin-top: -4px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ItemGrid" class="grid anim d3" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Setting%20menu.png?fileID=-1546969721&amp;guid=b1b6e7132377cb74fa27a9e88f263c63&amp;type=3#Setting menu_1&quot;); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+                <ui:VisualElement class="lift">
+                    <ui:VisualElement class="bottombar anim d4" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-113444395&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_98&quot;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 6; -unity-slice-top: 6; -unity-slice-right: 6; -unity-slice-bottom: 6;">
+                        <ui:Label text="本局加成" class="bottombar__label" style="color: rgb(255, 255, 255); font-size: 17px; margin-top: 1px;" />
+                        <ui:Label name="StatsText" text="暂无" class="bottombar__stats bottombar__stats--none" style="font-size: 19px; color: rgb(255, 255, 255); margin-top: 1px;" />
+                        <ui:Label name="HintText" text="点击「购买」后立即生效" class="bottombar__hint" style="color: rgb(255, 255, 255); font-size: 18px; margin-top: 1px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

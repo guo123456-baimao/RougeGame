@@ -1,0 +1,58 @@
+{
+  "level": {
+    "path": "d:/Unity_Project/Newkey/RougeGame Unity 2021.3.31f1/RougeGame/Assets/Blueprints/Levels/Level 1.asset",
+    "monstersPrefabGuids": [
+      "12adb3a92ed404612906d2c1fe4b586e",
+      "dfcf798c11f284752815ead20a8dbaeb",
+      "b21d49c07805e4c2c8cab56371c5aad6",
+      "f221b6d092ee543038a69c17c526bab0"
+    ],
+    "finalBossPrefabGuid": "bf088821f793b4654a2ba39cb4266ae9",
+    "allBossPrefabGuids": [
+      "bf088821f793b4654a2ba39cb4266ae9",
+      "bf088821f793b4654a2ba39cb4266ae9",
+      "bf088821f793b4654a2ba39cb4266ae9",
+      "bf088821f793b4654a2ba39cb4266ae9",
+      "bf088821f793b4654a2ba39cb4266ae9"
+    ],
+    "dropPrefabGuids": [
+      "4fabfdfdc6c484336807c53a4f93611d",
+      "abf49d6cb814647109c1773c37109e8e",
+      "c124933462f2241329030e7c29e201ab",
+      "3d01182fe4b754a1ab28c215406b36b1"
+    ]
+  },
+  "collectables": [
+    {
+      "asset": "Bomb.asset",
+      "assetGuid": "f916c058556634bda965c03fdfeb6e5f",
+      "itemPrefabGuid": null
+    },
+    {
+      "asset": "Coin.asset",
+      "assetGuid": "9f463212d52f24e2a9bd7750e9404642",
+      "itemPrefabGuid": null
+    },
+    {
+      "asset": "Exp Gem.asset",
+      "assetGuid": "a6e849b826d47497992e43dc7703f382",
+      "itemPrefabGuid": null
+    },
+    {
+      "asset": "Health.asset",
+      "assetGuid": "1e8881a96e3a8448090b9e33085e2889",
+      "itemPrefabGuid": null
+    },
+    {
+      "asset": "Magnet.asset",
+      "assetGuid": "71e596159c7584eb280a44ff72551933",
+      "itemPrefabGuid": null
+    },
+    {
+      "asset": "Red Potion.asset",
+      "assetGuid": "92390e9f013254f2281bf566e602b1f3",
+      "itemPrefabGuid": null
+    }
+  ],
+  "hudThemeGuid": "133471e07c9c24346911eb05f77995a2"
+}

@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ui-tokens.uss?fileID=7433441132597879392&amp;guid=caeb910a7f9ceac449cad2172608b7e6&amp;type=3#ui-tokens" />
+    <Style src="project://database/Assets/UI/home-page.uss?fileID=7433441132597879392&amp;guid=c66d75aea36d5e44b9dbef714bfb712d&amp;type=3#home-page" />
+    <Style src="project://database/Assets/UI/ui-motion.uss?fileID=7433441132597879392&amp;guid=175b8b6d048b7a74daf22febcbf3e2c4&amp;type=3#ui-motion" />
+    <ui:VisualElement name="HomePage" class="home" style="background-image: none;">
+        <ui:VisualElement class="home__titlebar anim d1" style="background-image: url(&quot;project://database/Assets/Sprites/Kenney/PlatformerTilemap.png?fileID=-934257123&amp;guid=4a9825874034d4671b1dc9f6c8707eca&amp;type=3#tiles_packed_154&quot;); -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; -unity-background-image-tint-color: rgb(255, 113, 86); background-color: rgba(36, 36, 36, 0);">
+            <ui:VisualElement picking-mode="Ignore" class="home__account-slot" />
+            <ui:Label text="吸血鬼幸存者" class="home__title" style="-unity-text-align: upper-center; color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="AccountArea" class="home__account">
+                <ui:Button name="AccountButton" text="登录" focusable="false" class="home__account-btn" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-809199440&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_15&quot;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(255, 94, 94); color: rgb(255, 255, 255); -unity-slice-left: 7; -unity-slice-top: 7; -unity-slice-right: 7; -unity-slice-bottom: 7;" />
+                <ui:Label name="AccountNameLabel" class="home__account-name hidden" />
+                <ui:Button name="LogoutButton" text="退出" focusable="false" class="home__account-logout hidden" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="home__entries" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Setting%20menu.png?fileID=-1546969721&amp;guid=b1b6e7132377cb74fa27a9e88f263c63&amp;type=3#Setting menu_1&quot;); -unity-background-image-tint-color: rgb(255, 230, 230); background-color: rgba(255, 255, 255, 0);">
+            <ui:VisualElement class="home-entry anim d2" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1336685409&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_51&quot;); -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-background-image-tint-color: rgb(255, 0, 0);">
+                <ui:VisualElement class="lift lift--tile">
+                    <ui:Button name="ShopTile" focusable="false" class="home-entry__tile" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1451439134&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_55&quot;);">
+                        <ui:VisualElement picking-mode="Ignore" class="home-entry__icon home-entry__icon--shop" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:Button name="ShopButton" text="商城" focusable="false" class="home-entry__button" style="background-image: url(&quot;project://database/Assets/Sprites/UI/UI%20Big%20Play%20Button.png?fileID=-1609655325&amp;guid=e19a3ca9859ba6e499b27d13f209b1a1&amp;type=3#UI Big Play Button_1&quot;); background-color: rgba(255, 255, 255, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement class="home-entry anim d3" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1336685409&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_51&quot;); -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-background-image-tint-color: rgb(255, 7, 0);">
+                <ui:VisualElement class="lift lift--tile">
+                    <ui:Button name="StartTile" focusable="false" class="home-entry__tile" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1451439134&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_55&quot;);">
+                        <ui:VisualElement picking-mode="Ignore" class="home-entry__icon home-entry__icon--start" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:Button name="StartButton" text="开始" focusable="false" class="home-entry__button" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1334300013&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_210&quot;); background-color: rgba(255, 255, 255, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement class="home-entry anim d4" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=-1336685409&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_51&quot;); -unity-background-image-tint-color: rgb(255, 0, 0); -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;">
+                <ui:VisualElement class="lift lift--tile">
+                    <ui:Button name="UpgradeTile" focusable="false" class="home-entry__tile" style="background-image: url(&quot;project://database/Assets/Sprites/UI/Sprite%20sheet%20for%20Basic%20Pack.png?fileID=1451439134&amp;guid=54f4a82656dc18d48ad468e0bc6893e4&amp;type=3#Sprite sheet for Basic Pack_55&quot;);">
+                        <ui:VisualElement picking-mode="Ignore" class="home-entry__icon home-entry__icon--upgrade" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:Button name="UpgradeButton" text="强化" focusable="false" class="home-entry__button" style="background-image: url(&quot;project://database/Assets/Sprites/UI/UI%20Big%20Play%20Button.png?fileID=-1609655325&amp;guid=e19a3ca9859ba6e499b27d13f209b1a1&amp;type=3#UI Big Play Button_1&quot;); background-color: rgba(255, 255, 255, 0);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
