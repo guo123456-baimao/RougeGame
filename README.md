@@ -1,3 +1,4 @@
+```text
 Server/                                          # 服务端根目录
 ├── RogueGameServer/                             # ASP.NET Core 服务端项目（MySQL + JWT）
 │   ├── Controllers/                             # —— REST 控制器 ——
@@ -30,7 +31,6 @@ Server/                                          # 服务端根目录
 ├── 放行防火墙5000端口.bat                        # Windows 防火墙放行 5000 端口脚本
 ├── 启动云存档后端.bat                            # 启动服务端进程的快捷脚本
 └── start_server_dev.bat                         # 开发模式启动脚本
-
 
 Assets/Scripts/
 ├── AudioManager.cs                            # 全局音频管理单例，管理音效与背景音乐播放
@@ -238,3 +238,4 @@ Assets/Scripts/
     ├── SpriteAnimator.cs                      # 简易帧序列 Sprite 动画播放器
     ├── UpgradeableValues.cs                   # 技能可升级属性体系（浮点/整数升级链）
     └── ZPositioner.cs                         # 按 y 坐标调整 z 值实现伪深度排序
+```
